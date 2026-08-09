@@ -37,13 +37,6 @@ body{margin:0;background:#0b1220;color:#fff;font-family:Arial;padding-bottom:90p
 .l1{background:#fda4af;color:#3b0008}
 .l2{background:#fb7185;color:#3b0008}
 .l3{background:#f43f5e;color:#fff}
-.tg{position:fixed;right:10px;bottom:150px;display:flex;flex-direction:column;gap:10px;z-index:9999}
-.tg a{color:#fff;text-decoration:none;padding:10px 12px;border-radius:26px;font-weight:bold;font-size:14px;box-shadow:0 4px 12px rgba(0,0,0,.4)}
-.t1{background:#0088cc}.t2{background:#16a34a}.t3{background:#dc2626}
-.bot{position:fixed;bottom:0;left:0;right:0;background:rgba(17,24,39,.92);backdrop-filter:blur(12px);display:flex;justify-content:space-around;padding:10px 0;border-top:1px solid #1f2937}
-.bot div{text-align:center;font-size:12px;color:#cbd5e1}.bot .a{color:#f59e0b}
-a{color:white;text-decoration:none}
-.small{font-size:11px;opacity:.8}
 </style>
 </head>
 <body>
@@ -60,7 +53,7 @@ a{color:white;text-decoration:none}
 
 <div class="ticker">
   <marquee scrollamount="6">
-    🔥 India 1.83 | Pakistan 1.89 • CSK 1.68 | MI 1.74 • Liverpool 1.45 | Arsenal 1.50 • Nadal 1.92 | Sinner 1.98
+    🔥 India 1.83 | Pakistan 1.89 • CSK 1.68 | MI 1.74 • Liverpool 1.45 | Arsenal 1.50
   </marquee>
 </div>
 
@@ -88,8 +81,19 @@ a{color:white;text-decoration:none}
 <div class="trend">
   <div style="color:#f59e0b;font-weight:bold;margin-bottom:10px">🔥 Trending Matches</div>
   <div class="trow">
-    <div class="tcard"><div class="live">LIVE</div><div style="margin-top:8px">India</div><div style="color:#94a3b8">Pakistan</div><div style="margin-top:10px;color:#f59e0b;font-weight:bold">1.83 / 1.89</div></div>
-    <div class="tcard"><div class="live">LIVE</div><div style="margin-top:8px">CSK</div><div style="color:#94a3b8">MI</div><div style="margin-top:10px;color:#f59e0b;font-weight:bold">1.65 / 1.72</div></div>
+    <div class="tcard">
+      <div class="live">LIVE</div>
+      <div style="margin-top:8px">India</div>
+      <div style="color:#94a3b8">Pakistan</div>
+      <div style="margin-top:10px;color:#f59e0b;font-weight:bold">1.83 / 1.89</div>
+    </div>
+
+    <div class="tcard">
+      <div class="live">LIVE</div>
+      <div style="margin-top:8px">CSK</div>
+      <div style="color:#94a3b8">MI</div>
+      <div style="margin-top:10px;color:#f59e0b;font-weight:bold">1.65 / 1.72</div>
+    </div>
   </div>
 </div>
 
@@ -108,23 +112,50 @@ a{color:white;text-decoration:none}
     </div>
 
     <div class="r"><span style="font-weight:bold">India</span><span style="color:#94a3b8">182/5</span></div>
-    <div class="r"><span style="font-weight:bold">Pakistan</span><span style="color:#94a3b8">19.4 ov</span></div>
+    <div class="r"><span style="font-weight:bold">Pakistan</span><span style="color:#94a3b8">19.4 ov</span></div>     
+        <div class="grid">
+      <div class="b1">
+        <div style="font-size:10px">BACK</div>
+        <div style="font-size:20px;font-weight:bold">1.82</div>
+        <div style="font-size:10px">125k</div>
+      </div>
 
-    <div class="grid">
-      <div class="b1"><div class="small">BACK</div><div style="font-size:18px;font-weight:bold">1.82</div><div class="small">125k</div></div>
-      <div class="b2"><div class="small">BACK</div><div style="font-size:18px;font-weight:bold">1.83</div><div class="small">98k</div></div>
-      <div class="b3"><div class="small">BACK</div><div style="font-size:18px;font-weight:bold">1.84</div><div class="small">76k</div></div>
+      <div class="b2">
+        <div style="font-size:10px">BACK</div>
+        <div style="font-size:20px;font-weight:bold">1.83</div>
+        <div style="font-size:10px">98k</div>
+      </div>
+
+      <div class="b3">
+        <div style="font-size:10px">BACK</div>
+        <div style="font-size:20px;font-weight:bold">1.84</div>
+        <div style="font-size:10px">76k</div>
+      </div>
     </div>
 
     <div class="grid2">
-      <div class="l1"><div class="small">LAY</div><div style="font-size:18px;font-weight:bold">1.88</div><div class="small">142k</div></div>
-      <div class="l2"><div class="small">LAY</div><div style="font-size:18px;font-weight:bold">1.89</div><div class="small">119k</div></div>
-      <div class="l3"><div class="small">LAY</div><div style="font-size:18px;font-weight:bold">1.90</div><div class="small">84k</div></div>
+      <div class="l1">
+        <div style="font-size:10px">LAY</div>
+        <div style="font-size:20px;font-weight:bold">1.88</div>
+        <div style="font-size:10px">142k</div>
+      </div>
+
+      <div class="l2">
+        <div style="font-size:10px">LAY</div>
+        <div style="font-size:20px;font-weight:bold">1.89</div>
+        <div style="font-size:10px">119k</div>
+      </div>
+
+      <div class="l3">
+        <div style="font-size:10px">LAY</div>
+        <div style="font-size:20px;font-weight:bold">1.90</div>
+        <div style="font-size:10px">84k</div>
+      </div>
     </div>
 
-    <div class="r" style="margin-top:10px;font-size:12px;color:#94a3b8">
-      <span>Volume ₹12.4L</span>
-      <span>Market Open</span>
+    <div class="r" style="margin-top:12px;font-size:12px;color:#94a3b8">
+      <span>📊 Volume ₹12.4L</span>
+      <span>🟢 Market Open</span>
     </div>
 
   </div>
@@ -133,16 +164,25 @@ a{color:white;text-decoration:none}
 
 <div class="s">
   <h2>⚽ Live Football</h2>
+
   <div class="m">
     <div class="live">● LIVE</div>
     <div class="r"><span>Liverpool</span><span>2</span></div>
     <div class="r"><span>Arsenal</span><span>1</span></div>
     <div class="t">Premier League • 72'</div>
   </div>
+
+  <div class="m">
+    <div class="live">● LIVE</div>
+    <div class="r"><span>Barcelona</span><span>1</span></div>
+    <div class="r"><span>Real Madrid</span><span>1</span></div>
+    <div class="t">La Liga • 61'</div>
+  </div>
 </div>
 
 <div class="s">
   <h2>🎾 Live Tennis</h2>
+
   <div class="m">
     <div class="live">● LIVE</div>
     <div class="r"><span>Djokovic</span><span>1</span></div>
@@ -153,9 +193,33 @@ a{color:white;text-decoration:none}
 
 <div class="s">
   <h2>📅 Upcoming Matches</h2>
-  <div class="m"><div class="r"><span>Australia</span><span>vs</span><span>England</span></div><div class="t">Today • 7:30 PM • ODI</div></div>
-  <div class="m"><div class="r"><span>Barcelona</span><span>vs</span><span>Real Madrid</span></div><div class="t">Tomorrow • 1:30 AM • La Liga</div></div>
+
+  <div class="m">
+    <div class="r"><span>Australia</span><span>vs</span><span>England</span></div>
+    <div class="t">Today • 7:30 PM • ODI</div>
+  </div>
+
+  <div class="m">
+    <div class="r"><span>Barcelona</span><span>vs</span><span>Real Madrid</span></div>
+    <div class="t">Tomorrow • 1:30 AM • La Liga</div>
+  </div>
+
+  <div class="m">
+    <div class="r"><span>Nadal</span><span>vs</span><span>Sinner</span></div>
+    <div class="t">Tomorrow • 5:00 PM • ATP</div>
+  </div>
 </div>
+<style>
+.tg{position:fixed;right:10px;bottom:150px;display:flex;flex-direction:column;gap:10px;z-index:9999}
+.tg a{color:#fff;text-decoration:none;padding:10px 12px;border-radius:26px;font-weight:bold;font-size:14px;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+.t1{background:#0088cc}.t2{background:#16a34a}.t3{background:#dc2626}
+
+.bot{position:fixed;bottom:0;left:0;right:0;background:rgba(17,24,39,.92);backdrop-filter:blur(12px);display:flex;justify-content:space-around;padding:10px 0;border-top:1px solid #1f2937}
+.bot div{text-align:center;font-size:12px;color:#cbd5e1}
+.bot .a{color:#f59e0b}
+
+a{color:white;text-decoration:none}
+</style>
 
 <div class="tg">
   <a class="t1" href="https://t.me/mercyy922" target="_blank">💬 Telegram</a>
