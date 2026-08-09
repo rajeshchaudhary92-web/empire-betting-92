@@ -6,24 +6,46 @@
 <title>India vs Pakistan</title>
 <style>
 body{margin:0;background:#0b1220;color:#fff;font-family:Arial;padding-bottom:80px}
-.top{background:#111827;padding:15px;text-align:center;font-size:22px;font-weight:bold;color:#f59e0b}
-.card{background:#111827;margin:15px;border-radius:16px;padding:15px;border:1px solid #1f2937}
-.live{color:#22c55e;font-weight:bold}
+.top{background:#111827;padding:15px;text-align:center;font-size:22px;font-weight:bold;color:#f59e0b;position:sticky;top:0;z-index:100}
+.score{background:#052e16;color:#86efac;padding:10px;display:flex;justify-content:space-between;font-weight:bold}
+.tabs{display:flex;background:#1f2937;overflow:auto}
+.tabs div{padding:12px 16px;white-space:nowrap;font-weight:bold;color:#cbd5e1}
+.tabs .a{color:#f59e0b;border-bottom:2px solid #f59e0b}
+.card{background:#111827;margin:15px;border-radius:16px;padding:15px;border:1px solid #1f2937;box-shadow:0 8px 22px rgba(0,0,0,.35)}
+.live{color:#22c55e;font-weight:bold;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:.4}}
 .row{display:flex;justify-content:space-between;margin:10px 0}
-.odds{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:15px}
-.back{background:#2563eb;padding:12px;border-radius:10px;text-align:center;font-weight:bold}
-.lay{background:#dc2626;padding:12px;border-radius:10px;text-align:center;font-weight:bold}
-.market{background:#0f172a;margin-top:12px;border-radius:12px;padding:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:12px}
+.grid2{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:6px}
+.b1,.b2,.b3,.l1,.l2,.l3{padding:10px;border-radius:10px;text-align:center;font-weight:bold}
+.b1{background:#1d4ed8}.b2{background:#2563eb}.b3{background:#3b82f6}
+.l1{background:#ef4444}.l2{background:#dc2626}.l3{background:#b91c1c}
+.market{background:#0f172a;border-radius:12px;padding:12px;margin-top:12px}
 .market h3{margin:0 0 10px;color:#fbbf24}
-a{color:white;text-decoration:none}
-.bottom{position:fixed;bottom:0;left:0;right:0;background:#111827;display:flex;justify-content:space-around;padding:10px 0;border-top:1px solid #1f2937}
+.cash{background:#16a34a;padding:14px;border-radius:12px;text-align:center;font-weight:bold;margin-top:12px}
+.comment{background:#111827;margin:15px;border-radius:16px;padding:15px;border:1px solid #1f2937}
+.bottom{position:fixed;bottom:0;left:0;right:0;background:rgba(17,24,39,.92);backdrop-filter:blur(12px);display:flex;justify-content:space-around;padding:10px 0;border-top:1px solid #1f2937}
 .bottom div{text-align:center;font-size:12px;color:#cbd5e1}
 .bottom .a{color:#f59e0b}
+a{color:white;text-decoration:none}
 </style>
 </head>
 <body>
 
 <div class="top">🏏 India vs Pakistan</div>
+
+<div class="score">
+  <span>🔴 182/5</span>
+  <span>RR 9.25</span>
+  <span>19.4 ov</span>
+</div>
+
+<div class="tabs">
+  <div class="a">Match Odds</div>
+  <div>Fancy</div>
+  <div>Bookmaker</div>
+  <div>Session</div>
+</div>
 
 <div class="card">
   <div class="live">● LIVE</div>
@@ -31,12 +53,19 @@ a{color:white;text-decoration:none}
   <div class="row"><span>Pakistan</span><span>19.4 ov</span></div>
   <div class="row"><span>Current RR</span><span>9.25</span></div>
 
-  <div class="odds">
-    <div class="back">BACK 1.82</div>
-    <div class="lay">LAY 1.88</div>
-    <div class="back">BACK 1.83</div>
-    <div class="lay">LAY 1.89</div>
+  <div class="grid">
+    <div class="b1">1.82</div>
+    <div class="b2">1.83</div>
+    <div class="b3">1.84</div>
   </div>
+
+  <div class="grid2">
+    <div class="l1">1.88</div>
+    <div class="l2">1.89</div>
+    <div class="l3">1.90</div>
+  </div>
+
+  <div class="cash">💰 CASHOUT AVAILABLE</div>
 </div>
 
 <div class="card market">
@@ -56,6 +85,13 @@ a{color:white;text-decoration:none}
   <h3>🔥 Bookmaker</h3>
   <div class="row"><span>India</span><span>1.80</span></div>
   <div class="row"><span>Pakistan</span><span>2.10</span></div>
+</div>
+
+<div class="comment">
+  <h3 style="color:#f59e0b;margin-top:0">📝 Commentary</h3>
+  <p>19.4 - FOUR! Kohli drives through covers.</p>
+  <p>19.3 - 2 runs, excellent running between the wickets.</p>
+  <p>19.2 - Dot ball, good yorker from Shaheen.</p>
 </div>
 
 <div class="bottom">
