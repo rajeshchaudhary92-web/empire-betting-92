@@ -6,60 +6,72 @@
 <title>Empire Betting</title>
 
 <style>
-body{
+*{
   margin:0;
-  font-family:Arial;
-  background:#0f172a;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#0b1220;
+  font-family:Arial, sans-serif;
   color:white;
   padding-bottom:70px;
 }
 
 .header{
   background:#111827;
-  color:#f59e0b;
+  padding:14px;
   text-align:center;
-  padding:15px;
-  font-size:24px;
+  font-size:22px;
   font-weight:bold;
+  color:#f59e0b;
+  position:sticky;
+  top:0;
+  z-index:100;
 }
 
 .tabs{
   display:flex;
-  background:#1e293b;
   overflow:auto;
+  background:#1f2937;
 }
 
-.tab{
+.tabs div{
   padding:12px 16px;
-  color:#cbd5e1;
   white-space:nowrap;
+  color:#cbd5e1;
   font-weight:bold;
 }
 
-.tab.active{
+.tabs .active{
   color:#f59e0b;
   border-bottom:2px solid #f59e0b;
 }
 
 .section{
-  padding:15px;
+  padding:14px;
 }
 
 .section h2{
   color:#f59e0b;
   margin-bottom:10px;
+  font-size:18px;
 }
 
-.card{
-  background:#1e293b;
-  padding:15px;
-  border-radius:12px;
-  margin-bottom:12px;
+.match{
+  background:#111827;
+  border-radius:14px;
+  padding:14px;
+  margin-bottom:14px;
+  border:1px solid #1f2937;
 }
 
 .live{
   color:#22c55e;
   font-weight:bold;
+  font-size:12px;
+  margin-bottom:8px;
   animation:blink 1s infinite;
 }
 
@@ -67,30 +79,41 @@ body{
   50%{opacity:0.4;}
 }
 
-.team{
+.row{
   display:flex;
   justify-content:space-between;
+  align-items:center;
   margin:8px 0;
-  font-size:18px;
+}
+
+.team{
+  font-size:16px;
+  font-weight:600;
+}
+
+.score{
+  color:#e5e7eb;
 }
 
 .time{
   color:#94a3b8;
-  font-size:14px;
+  font-size:13px;
+  margin-top:6px;
 }
 
 .odds{
   display:flex;
-  gap:10px;
+  gap:8px;
   margin-top:12px;
 }
 
-.odd{
+.back, .lay{
   flex:1;
+  text-align:center;
   padding:10px;
   border-radius:10px;
-  text-align:center;
   font-weight:bold;
+  font-size:14px;
 }
 
 .back{
@@ -99,6 +122,30 @@ body{
 
 .lay{
   background:#dc2626;
+}
+
+.market{
+  background:#0f172a;
+  border-radius:10px;
+  padding:10px;
+  margin-top:10px;
+}
+
+.market-title{
+  color:#fbbf24;
+  font-size:14px;
+  margin-bottom:8px;
+}
+
+.market-row{
+  display:flex;
+  justify-content:space-between;
+  padding:6px 0;
+  border-bottom:1px solid #1f2937;
+}
+
+.market-row:last-child{
+  border-bottom:none;
 }
 
 .bottom{
@@ -110,7 +157,7 @@ body{
   display:flex;
   justify-content:space-around;
   padding:10px 0;
-  border-top:1px solid #334155;
+  border-top:1px solid #1f2937;
 }
 
 .bottom div{
@@ -130,23 +177,60 @@ body{
 <div class="header">EMPIRE BETTING</div>
 
 <div class="tabs">
-  <div class="tab active">🏏 Cricket</div>
-  <div class="tab">⚽ Football</div>
-  <div class="tab">🎾 Tennis</div>
+  <div class="active">🏏 Cricket</div>
+  <div>⚽ Football</div>
+  <div>🎾 Tennis</div>
+  <div>🏀 Basketball</div>
 </div>
 
 <div class="section">
   <h2>🔴 Live Matches</h2>
 
-  <div class="card">
+  <div class="match">
     <div class="live">LIVE</div>
-    <div class="team"><span>India</span><span>156/4</span></div>
-    <div class="team"><span>Pakistan</span><span>18.2 ov</span></div>
+    <div class="row">
+      <div class="team">India</div>
+      <div class="score">182/5</div>
+    </div>
+    <div class="row">
+      <div class="team">Pakistan</div>
+      <div class="score">19.4 ov</div>
+    </div>
     <div class="time">Asia Cup • Dubai</div>
 
     <div class="odds">
-      <div class="odd back">BACK 1.82</div>
-      <div class="odd lay">LAY 1.88</div>
+      <div class="back">BACK 1.82</div>
+      <div class="lay">LAY 1.88</div>
+    </div>
+
+    <div class="market">
+      <div class="market-title">Match Odds</div>
+      <div class="market-row"><span>India</span><span>1.82</span></div>
+      <div class="market-row"><span>Pakistan</span><span>2.14</span></div>
+    </div>
+
+    <div class="market">
+      <div class="market-title">Fancy</div>
+      <div class="market-row"><span>Over 19.5</span><span>1.95</span></div>
+      <div class="market-row"><span>Over 20.5</span><span>2.20</span></div>
+    </div>
+  </div>
+
+  <div class="match">
+    <div class="live">LIVE</div>
+    <div class="row">
+      <div class="team">CSK</div>
+      <div class="score">144/3</div>
+    </div>
+    <div class="row">
+      <div class="team">MI</div>
+      <div class="score">15.1 ov</div>
+    </div>
+    <div class="time">IPL • Chennai</div>
+
+    <div class="odds">
+      <div class="back">BACK 1.65</div>
+      <div class="lay">LAY 1.70</div>
     </div>
   </div>
 </div>
@@ -154,24 +238,22 @@ body{
 <div class="section">
   <h2>📅 Upcoming Matches</h2>
 
-  <div class="card">
-    <div class="team">
-      <span>CSK</span>
-      <span>vs</span>
-      <span>MI</span>
+  <div class="match">
+    <div class="row">
+      <div class="team">Australia</div>
+      <div>vs</div>
+      <div class="team">England</div>
     </div>
-    <div class="time">Today • 7:30 PM • IPL</div>
+    <div class="time">Today • 7:30 PM • ODI</div>
   </div>
-</div>
 
-<div class="section">
-  <h2>🔥 Popular Markets</h2>
-
-  <div class="card">
-    <div class="team">
-      <span>Match Winner</span>
-      <span>India</span>
+  <div class="match">
+    <div class="row">
+      <div class="team">Liverpool</div>
+      <div>vs</div>
+      <div class="team">Arsenal</div>
     </div>
+    <div class="time">Tomorrow • 8:00 PM • Premier League</div>
   </div>
 </div>
 
