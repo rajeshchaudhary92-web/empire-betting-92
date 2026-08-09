@@ -1,43 +1,186 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EMPIRE BETTING 92 — Home</title><style>
-*{box-sizing:border-box}body{margin:0;background:#f3f4f4;color:#171b1e;font:14px Arial,sans-serif}
-.top{height:58px;background:#171d21;color:#fff;display:flex;align-items:center;padding:0 14px;gap:18px;position:sticky;top:0;z-index:20}
-.menu{font-size:27px}.logo{font-size:22px;font-weight:900;letter-spacing:-.7px}.logo b{color:#20c77d}.search{margin-left:auto;font-size:27px}.affiliate{background:#21c978;color:#06130c;padding:11px 14px;border-radius:3px;font-weight:700}.user{background:#fff;color:#111;padding:5px 12px;border-radius:3px;text-align:center;font-size:12px}
-.notice{background:#075d4d;color:#b9e8dc;height:27px;padding:6px 14px;font-size:12px;white-space:nowrap;overflow:hidden}
-.wrap{max-width:1100px;margin:auto;padding:9px 12px 75px}.sports{display:flex;gap:5px;background:#fff;border-bottom:1px solid #ddd;overflow:auto}.sport{min-width:120px;padding:12px;text-align:center;font-weight:800;border-bottom:3px solid transparent}.sport.active{color:#07865f;border-bottom-color:#19bd78}
-.title{display:flex;justify-content:space-between;align-items:center;background:#fff;margin-top:8px;padding:12px;border-bottom:1px solid #ddd}.title h2{font-size:16px;margin:0}.sub{font-size:12px;color:#777}
-.match{background:#fff;border-bottom:1px solid #ddd;display:grid;grid-template-columns:minmax(280px,1fr) 430px;min-height:102px}.matchinfo{padding:11px 12px}.league{font-size:11px;color:#777;margin-bottom:7px}.teams{font-weight:800;line-height:1.8}.meta{font-size:11px;color:#777}.live{color:#e51e2a;font-weight:900;margin-right:7px}.market{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:10px 7px;align-items:center}.market div{background:#e9f3fb;border:1px solid #cfe1f2;border-radius:7px;text-align:center;padding:9px 4px;font-weight:800}.market div:nth-child(n+2){background:#f7eeee;border-color:#edd9d9}.market small{display:block;font-weight:500;color:#777;margin-top:3px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}.card{background:#fff;border:1px solid #ddd;border-radius:7px;padding:18px}.card h3{margin:0 0 7px}.card p{color:#777;font-size:12px;line-height:1.5}.btn{display:inline-block;background:#128b68;color:#fff;text-decoration:none;padding:9px 12px;border-radius:4px;font-weight:700;font-size:12px}
-.profile{background:#fff;margin-top:10px;padding:22px;border:1px solid #ddd;border-radius:7px}.avatar{width:60px;height:60px;border-radius:50%;background:#19b874;color:#fff;display:flex;align-items:center;justify-content:center;font-size:27px;font-weight:900}.row{display:flex;gap:15px;align-items:center}.line{height:1px;background:#eee;margin:18px 0}
-.bottom{position:fixed;bottom:0;left:0;right:0;background:#181e22;color:#aaa;height:58px;display:flex;justify-content:center;z-index:20}.nav{width:130px;text-align:center;padding:8px;font-size:12px;text-decoration:none;color:#aaa}.nav strong{display:block;font-size:20px}.nav.active{color:#21c978}
-@media(max-width:720px){.match{grid-template-columns:1fr}.market{padding-top:0}.cards{grid-template-columns:1fr}.affiliate{display:none}.bottom .nav{width:20%}}
-</style></head><body>
-    <header class="top"><div class="menu">☰</div><div class="logo"><b>EMPIRE</b> BETTING <b>92</b></div>
-    <div class="search">⌕</div><div class="affiliate">Affiliate</div><div class="user">♙<br>Profile</div></header>
-    <div class="notice">🔊 Sports updates — cricket, football and tennis</div>
-    <main class="wrap">
-    <div class="sports">
-      <a class="sport active" href="index.html">🏆 Home</a>
-      <a class="sport " href="cricket.html">🏏 Cricket</a>
-      <a class="sport " href="football.html">⚽ Football</a>
-      <a class="sport " href="tennis.html">🎾 Tennis</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Empire Betting</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0f172a;
+  color:white;
+  padding-bottom:70px;
+}
+
+.header{
+  background:#111827;
+  color:#f59e0b;
+  text-align:center;
+  padding:15px;
+  font-size:24px;
+  font-weight:bold;
+}
+
+.tabs{
+  display:flex;
+  background:#1e293b;
+  overflow:auto;
+}
+
+.tab{
+  padding:12px 16px;
+  color:#cbd5e1;
+  white-space:nowrap;
+  font-weight:bold;
+}
+
+.tab.active{
+  color:#f59e0b;
+  border-bottom:2px solid #f59e0b;
+}
+
+.section{
+  padding:15px;
+}
+
+.section h2{
+  color:#f59e0b;
+  margin-bottom:10px;
+}
+
+.card{
+  background:#1e293b;
+  padding:15px;
+  border-radius:12px;
+  margin-bottom:12px;
+}
+
+.live{
+  color:#22c55e;
+  font-weight:bold;
+  animation:blink 1s infinite;
+}
+
+@keyframes blink{
+  50%{opacity:0.4;}
+}
+
+.team{
+  display:flex;
+  justify-content:space-between;
+  margin:8px 0;
+  font-size:18px;
+}
+
+.time{
+  color:#94a3b8;
+  font-size:14px;
+}
+
+.odds{
+  display:flex;
+  gap:10px;
+  margin-top:12px;
+}
+
+.odd{
+  flex:1;
+  padding:10px;
+  border-radius:10px;
+  text-align:center;
+  font-weight:bold;
+}
+
+.back{
+  background:#2563eb;
+}
+
+.lay{
+  background:#dc2626;
+}
+
+.bottom{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:#111827;
+  display:flex;
+  justify-content:space-around;
+  padding:10px 0;
+  border-top:1px solid #334155;
+}
+
+.bottom div{
+  text-align:center;
+  font-size:12px;
+  color:#cbd5e1;
+}
+
+.bottom .active{
+  color:#f59e0b;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">EMPIRE BETTING</div>
+
+<div class="tabs">
+  <div class="tab active">🏏 Cricket</div>
+  <div class="tab">⚽ Football</div>
+  <div class="tab">🎾 Tennis</div>
+</div>
+
+<div class="section">
+  <h2>🔴 Live Matches</h2>
+
+  <div class="card">
+    <div class="live">LIVE</div>
+    <div class="team"><span>India</span><span>156/4</span></div>
+    <div class="team"><span>Pakistan</span><span>18.2 ov</span></div>
+    <div class="time">Asia Cup • Dubai</div>
+
+    <div class="odds">
+      <div class="odd back">BACK 1.82</div>
+      <div class="odd lay">LAY 1.88</div>
     </div>
-    
-<div class="title"><h2>🔴 Live & Upcoming</h2><span class="sub">Sports centre</span></div>
-<div id="matches">
-<article class="match"><div class="matchinfo"><div class="league">Cricket • T20</div><div class="teams"><span class="live">● LIVE</span>Falcon Rocket<br>Godzilla Vipers</div><div class="meta">Live now • 46/2 (6.0)</div></div><div class="market"><div>Match Info<small>View</small></div><div>Scorecard<small>Open</small></div><div>Details<small>View</small></div></div></article><article class="match"><div class="matchinfo"><div class="league">Cricket • T20</div><div class="teams">Jhabaz Khiladi<br>Falcon Rocket</div><div class="meta">Today • 8:30 PM</div></div><div class="market"><div>Match Info<small>View</small></div><div>Scorecard<small>Open</small></div><div>Details<small>View</small></div></div></article><article class="match"><div class="matchinfo"><div class="league">Football • League</div><div class="teams">City United<br>Royal FC</div><div class="meta">Today • 9:00 PM</div></div><div class="market"><div>Match Info<small>View</small></div><div>Scorecard<small>Open</small></div><div>Details<small>View</small></div></div></article><article class="match"><div class="matchinfo"><div class="league">Tennis • Singles</div><div class="teams">Player A<br>Player B</div><div class="meta">Tomorrow</div></div><div class="market"><div>Match Info<small>View</small></div><div>Scorecard<small>Open</small></div><div>Details<small>View</small></div></div></article>
+  </div>
 </div>
-<div class="title"><h2>Quick access</h2></div>
-<div class="cards">
- <div class="card"><h3>🏏 Cricket</h3><p>Live matches, fixtures and score information.</p><a class="btn" href="cricket.html">Open Cricket</a></div>
- <div class="card"><h3>⚽ Football</h3><p>Upcoming fixtures and match information.</p><a class="btn" href="football.html">Open Football</a></div>
- <div class="card"><h3>🎾 Tennis</h3><p>Matches and tournament information.</p><a class="btn" href="tennis.html">Open Tennis</a></div>
+
+<div class="section">
+  <h2>📅 Upcoming Matches</h2>
+
+  <div class="card">
+    <div class="team">
+      <span>CSK</span>
+      <span>vs</span>
+      <span>MI</span>
+    </div>
+    <div class="time">Today • 7:30 PM • IPL</div>
+  </div>
 </div>
-</main>
-    <nav class="bottom">
-      <a class="nav active" href="index.html"><strong>⌂</strong>Home</a>
-      <a class="nav" href="live.html"><strong>◉</strong>Live</a>
-      <a class="nav" href="cricket.html"><strong>▣</strong>Matches</a>
-      <a class="nav" href="history.html"><strong>◴</strong>History</a>
-      <a class="nav" href="profile.html"><strong>♙</strong>Profile</a>
-    </nav>
-    </body></html>
+
+<div class="section">
+  <h2>🔥 Popular Markets</h2>
+
+  <div class="card">
+    <div class="team">
+      <span>Match Winner</span>
+      <span>India</span>
+    </div>
+  </div>
+</div>
+
+<div class="bottom">
+  <div class="active">🏠<br>Home</div>
+  <div>🔴<br>Live</div>
+  <div>🎯<br>Markets</div>
+  <div>👤<br>Profile</div>
+</div>
+
+</body>
+</html>
