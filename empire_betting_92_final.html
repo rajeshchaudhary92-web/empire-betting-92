@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EMPIRE BETTING 92 — Sports</title>
+<style>
+:root{--bg:#f3f4f4;--dark:#171d21;--green:#19b874;--green2:#08765a;--line:#ddd}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font:14px Arial,sans-serif;color:#171b1e}
+.top{height:58px;background:var(--dark);color:#fff;display:flex;align-items:center;padding:0 14px;gap:18px;position:sticky;top:0;z-index:20}
+.menu{font-size:27px}.logo{font-size:22px;font-weight:900;letter-spacing:-.7px}.logo b{color:#20c77d}.search{margin-left:auto;font-size:28px}.affiliate{background:#21c978;color:#06130c;padding:11px 14px;border-radius:3px;font-weight:700}.user{background:#fff;color:#111;padding:5px 13px;border-radius:3px;text-align:center;font-size:12px}
+.notice{background:#075d4d;color:#b9e8dc;height:27px;padding:6px 14px;font-size:12px;white-space:nowrap;overflow:hidden}
+.wrap{max-width:1100px;margin:auto;padding:9px 12px 70px}
+.sports{display:flex;gap:5px;background:#fff;border-bottom:1px solid #ddd;overflow:auto}
+.sport{min-width:120px;padding:12px;text-align:center;font-weight:800;border-bottom:3px solid transparent;cursor:pointer}.sport.active{color:#07865f;border-bottom-color:#19bd78}
+.filters{display:flex;justify-content:space-between;align-items:center;background:#fff;margin-top:8px;padding:10px;border-bottom:1px solid #ddd}.filters h2{font-size:16px;margin:0}.pills{display:flex;gap:5px}.pill{border:1px solid #ccc;background:#fff;padding:7px 13px;border-radius:4px;cursor:pointer}.pill.active{background:#19bd78;color:#fff;border-color:#19bd78}
+.match{background:#fff;border-bottom:1px solid #ddd;display:grid;grid-template-columns:minmax(260px,1fr) 430px;min-height:100px}
+.matchinfo{padding:10px 12px}.league{font-size:11px;color:#777;margin-bottom:7px}.teams{font-weight:800;line-height:1.8}.meta{font-size:11px;color:#777}.live{color:#e51e2a;font-weight:900;margin-right:7px}
+.market{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:10px 7px;align-items:center}.market div{background:#e9f3fb;border:1px solid #cfe1f2;border-radius:7px;text-align:center;padding:9px 4px;font-weight:800}.market div:nth-child(n+2){background:#f7eeee;border-color:#edd9d9}.market small{display:block;font-weight:500;color:#777;margin-top:3px}
+.empty{padding:35px;text-align:center;background:#fff;color:#777}
+.bottom{position:fixed;bottom:0;left:0;right:0;background:#181e22;color:#aaa;height:58px;display:flex;justify-content:center;gap:0;z-index:20}.nav{width:130px;text-align:center;padding:8px;font-size:12px}.nav strong{display:block;font-size:20px}.nav.active{color:#21c978}
+@media(max-width:720px){.match{grid-template-columns:1fr}.market{padding-top:0}.sports .sport{min-width:100px}.affiliate{display:none}.bottom .nav{width:20%}}
+</style>
+</head>
+<body>
+<header class="top">
+ <div class="menu">☰</div><div class="logo"><b>EMPIRE</b> BETTING <b>92</b></div>
+ <div class="search">⌕</div><div class="affiliate">Affiliate</div><div class="user">♙<br>Profile</div>
+</header>
+<div class="notice">🔊 Live sports updates — cricket, football and tennis</div>
+<main class="wrap">
+ <div class="sports">
+  <div class="sport active" data-sport="all">🏆 All Sports</div>
+  <div class="sport" data-sport="cricket">🏏 Cricket</div>
+  <div class="sport" data-sport="football">⚽ Football</div>
+  <div class="sport" data-sport="tennis">🎾 Tennis</div>
+ </div>
+ <div class="filters"><h2>🔴 Live & Upcoming Matches</h2><div class="pills"><button class="pill active" data-status="all">All</button><button class="pill" data-status="live">Live</button><button class="pill" data-status="upcoming">Upcoming</button></div></div>
+ <section id="list"></section>
+</main>
+<nav class="bottom"><div class="nav active"><strong>⌂</strong>Home</div><div class="nav"><strong>◉</strong>Live</div><div class="nav"><strong>▣</strong>Matches</div><div class="nav"><strong>◴</strong>History</div><div class="nav"><strong>♙</strong>Profile</div></nav>
+<script>
+const games=[
+ {sport:"cricket",status:"live",league:"Cricket • T20",a:"Falcon Rocket",b:"Godzilla Vipers",score:"46/2 (6.0)",meta:"Live now"},
+ {sport:"cricket",status:"live",league:"Cricket • T20",a:"Jhabaz Khiladi",b:"Falcon Rocket",score:"—",meta:"Match starting soon"},
+ {sport:"cricket",status:"upcoming",league:"Cricket • T20",a:"Guyana XI",b:"Island XI",score:"—",meta:"Today • 8:30 PM"},
+ {sport:"football",status:"upcoming",league:"Football • League",a:"City United",b:"Royal FC",score:"—",meta:"Today • 9:00 PM"},
+ {sport:"tennis",status:"upcoming",league:"Tennis • Singles",a:"Player A",b:"Player B",score:"—",meta:"Tomorrow"}
+];
+let sport="all",status="all";
+function render(){
+ const list=games.filter(g=>(sport==="all"||g.sport===sport)&&(status==="all"||g.status===status));
+ document.querySelector("#list").innerHTML=list.length?list.map(g=>`
+ <article class="match">
+  <div class="matchinfo"><div class="league">${g.league}</div><div class="teams">${g.status==="live"?'<span class="live">● LIVE</span>':''}${g.a}<br>${g.b}</div><div class="meta">${g.meta} • ${g.score}</div></div>
+  <div class="market"><div>Match Info<small>View</small></div><div>Scorecard<small>Open</small></div><div>Details<small>View</small></div></div>
+ </article>`).join(""):'<div class="empty">No matches found.</div>';
+}
+document.querySelectorAll(".sport").forEach(x=>x.onclick=()=>{sport=x.dataset.sport;document.querySelectorAll(".sport").forEach(y=>y.classList.remove("active"));x.classList.add("active");render()});
+document.querySelectorAll(".pill").forEach(x=>x.onclick=()=>{status=x.dataset.status;document.querySelectorAll(".pill").forEach(y=>y.classList.remove("active"));x.classList.add("active");render()});
+render();
+</script>
+</body>
+</html>
