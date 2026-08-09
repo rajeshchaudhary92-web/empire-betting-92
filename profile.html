@@ -3,36 +3,246 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Profile</title>
+<title>My Profile</title>
+
 <style>
-body{margin:0;background:#0b1220;color:#fff;font-family:Arial}
-.top{background:#111827;padding:15px;text-align:center;font-size:22px;font-weight:bold;color:#f59e0b}
-.card{background:#111827;margin:15px;border-radius:16px;padding:20px;border:1px solid #1f2937}
-.row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #1f2937}
-.row:last-child{border-bottom:none}
-a{color:white;text-decoration:none}
-.btn{display:block;background:#2563eb;text-align:center;padding:14px;border-radius:12px;margin-top:15px;font-weight:bold}
+body{
+  margin:0;
+  background:#0b1220;
+  color:white;
+  font-family:Arial;
+  padding-bottom:90px;
+}
+
+.top{
+  background:#111827;
+  padding:16px;
+  text-align:center;
+  font-size:24px;
+  font-weight:bold;
+  color:#f59e0b;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.profile{
+  background:linear-gradient(180deg,#111827,#0f172a);
+  margin:15px;
+  border-radius:20px;
+  padding:20px;
+  text-align:center;
+  border:1px solid #1f2937;
+  box-shadow:0 8px 22px rgba(0,0,0,.35);
+}
+
+.avatar{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  background:#2563eb;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:42px;
+  margin:0 auto 15px;
+  box-shadow:0 0 20px rgba(37,99,235,.5);
+}
+
+.id{
+  color:#94a3b8;
+  font-size:14px;
+}
+
+.wallet{
+  background:linear-gradient(135deg,#16a34a,#15803d);
+  margin:15px;
+  border-radius:20px;
+  padding:22px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(22,163,74,.35);
+}
+
+.balance{
+  font-size:36px;
+  font-weight:bold;
+  margin-top:10px;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin:15px;
+}
+
+.stat{
+  background:#111827;
+  border:1px solid #1f2937;
+  border-radius:18px;
+  padding:18px;
+  text-align:center;
+}
+
+.stat .num{
+  font-size:22px;
+  font-weight:bold;
+  color:#f59e0b;
+}
+
+.menu{
+  background:#111827;
+  margin:15px;
+  border-radius:20px;
+  border:1px solid #1f2937;
+  overflow:hidden;
+}
+
+.item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 18px;
+  border-bottom:1px solid #1f2937;
+  text-decoration:none;
+  color:white;
+}
+
+.item:last-child{
+  border-bottom:none;
+}
+
+.item:hover{
+  background:#1f2937;
+}
+
+.btns{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin:15px;
+}
+
+.btn{
+  text-decoration:none;
+  color:white;
+  text-align:center;
+  padding:15px;
+  border-radius:16px;
+  font-weight:bold;
+  box-shadow:0 6px 18px rgba(0,0,0,.3);
+}
+
+.dep{background:#16a34a}
+.wit{background:#dc2626}
+
+.support{
+  background:#111827;
+  margin:15px;
+  border-radius:20px;
+  padding:18px;
+  border:1px solid #1f2937;
+  text-align:center;
+}
+
+.support a{
+  display:inline-block;
+  margin-top:12px;
+  background:#0088cc;
+  color:white;
+  text-decoration:none;
+  padding:12px 18px;
+  border-radius:14px;
+  font-weight:bold;
+}
+
+.bottom{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:rgba(17,24,39,.92);
+  backdrop-filter:blur(12px);
+  display:flex;
+  justify-content:space-around;
+  padding:10px 0;
+  border-top:1px solid #1f2937;
+}
+
+.bottom div{
+  text-align:center;
+  font-size:12px;
+  color:#cbd5e1;
+}
+
+.bottom .a{
+  color:#f59e0b;
+}
+
+.bottom a{
+  color:inherit;
+  text-decoration:none;
+}
 </style>
 </head>
+
 <body>
 
 <div class="top">👤 My Profile</div>
 
-<div class="card">
-  <div style="text-align:center;font-size:60px">👤</div>
-  <h2 style="text-align:center">Empire User</h2>
-  <p style="text-align:center;color:#94a3b8">ID: 458921</p>
+<div class="profile">
+  <div class="avatar">👤</div>
+  <h2>Empire User</h2>
+  <div class="id">User ID: 458921 • Active</div>
 </div>
 
-<div class="card">
-  <div class="row"><span>💰 Main Balance</span><span>₹ 0.00</span></div>
-  <div class="row"><span>📊 Exposure</span><span>₹ 0.00</span></div>
-  <div class="row"><span>🎯 Active Bets</span><span>0</span></div>
+<div class="wallet">
+  <div>💰 Available Balance</div>
+  <div class="balance">₹ 0.00</div>
 </div>
 
-<div class="card">
-  <a class="btn" href="mybets.html">📄 My Bets</a>
-  <a class="btn" href="wallet.html" style="background:#16a34a">💰 Wallet</a>
+<div class="stats">
+  <div class="stat">
+    <div class="num">₹0</div>
+    <div>Exposure</div>
+  </div>
+  <div class="stat">
+    <div class="num">0</div>
+    <div>Active Bets</div>
+  </div>
+  <div class="stat">
+    <div class="num">12</div>
+    <div>Settled Bets</div>
+  </div>
+  <div class="stat">
+    <div class="num">VIP</div>
+    <div>Level</div>
+  </div>
+</div>
+
+<div class="btns">
+  <a class="btn dep" href="wallet.html">💰 Deposit</a>
+  <a class="btn wit" href="wallet.html">💸 Withdraw</a>
+</div>
+
+<div class="menu">
+  <a class="item" href="mybets.html"><span>📄 My Bets</span><span>›</span></a>
+  <a class="item" href="wallet.html"><span>💰 Wallet History</span><span>›</span></a>
+  <a class="item" href="match.html"><span>🏏 Live Match</span><span>›</span></a>
+  <a class="item" href="#"><span>⚙️ Settings</span><span>›</span></a>
+</div>
+
+<div class="support">
+  <h3>📞 24x7 Telegram Support</h3>
+  <p style="color:#94a3b8">For Deposit, Withdraw and ID Support</p>
+  <a href="https://t.me/mercyy922" target="_blank">💬 Contact @mercyy922</a>
+</div>
+
+<div class="bottom">
+  <div><a href="index.html">🏠<br>Home</a></div>
+  <div><a href="match.html">🔴<br>Live</a></div>
+  <div><a href="wallet.html">💰<br>Wallet</a></div>
+  <div class="a">👤<br>Profile</div>
 </div>
 
 </body>
