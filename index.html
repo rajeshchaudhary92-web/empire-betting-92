@@ -21,9 +21,6 @@ body{
   font-size:24px;
   font-weight:bold;
   color:#f59e0b;
-  position:sticky;
-  top:0;
-  z-index:100;
 }
 
 .banner{
@@ -31,18 +28,6 @@ body{
   padding:8px;
   text-align:center;
   font-weight:bold;
-  overflow:hidden;
-  white-space:nowrap;
-}
-
-.banner span{
-  display:inline-block;
-  animation:scroll 12s linear infinite;
-}
-
-@keyframes scroll{
-  from{transform:translateX(100%)}
-  to{transform:translateX(-100%)}
 }
 
 .tabs{
@@ -89,7 +74,6 @@ body{
 
 .section h2{
   color:#f59e0b;
-  margin-bottom:10px;
 }
 
 .match{
@@ -161,7 +145,7 @@ body{
 
 .tg{
   position:fixed;
-  right:15px;
+  right:10px;
   bottom:120px;
   display:flex;
   flex-direction:column;
@@ -172,9 +156,10 @@ body{
 .tg a{
   color:white;
   text-decoration:none;
-  padding:12px 16px;
-  border-radius:30px;
+  padding:10px 12px;
+  border-radius:26px;
   font-weight:bold;
+  font-size:14px;
   box-shadow:0 4px 12px rgba(0,0,0,.4);
 }
 
@@ -210,9 +195,7 @@ body{
 
 <div class="header">🔔 EMPIRE BETTING</div>
 
-<div class="banner">
-  <span>🔥 IPL LIVE • FOOTBALL LIVE • TENNIS LIVE • NEW ID AVAILABLE • 24x7 SUPPORT 🔥</span>
-</div>
+<div class="banner">🔥 IPL LIVE • FOOTBALL LIVE • TENNIS LIVE • 24x7 SUPPORT 🔥</div>
 
 <div class="tabs">
   <div class="active">🏏 Cricket</div>
@@ -252,24 +235,6 @@ body{
       <div class="row"><span>Over 19.5</span><span>1.95</span></div>
       <div class="row"><span>Over 20.5</span><span>2.20</span></div>
     </div>
-
-    <div class="market">
-      <div class="market-title">Bookmaker</div>
-      <div class="row"><span>India</span><span>1.80</span></div>
-      <div class="row"><span>Pakistan</span><span>2.10</span></div>
-    </div>
-  </div>
-
-  <div class="match">
-    <div class="live">● LIVE</div>
-    <div class="row"><span>CSK</span><span>144/3</span></div>
-    <div class="row"><span>MI</span><span>15.1 ov</span></div>
-    <div class="time">IPL • Chennai</div>
-
-    <div class="odds">
-      <div class="back">BACK 1.65</div>
-      <div class="lay">LAY 1.70</div>
-    </div>
   </div>
 </div>
 
@@ -302,20 +267,6 @@ body{
       <div class="back">BACK 1.72</div>
       <div class="lay">LAY 1.78</div>
     </div>
-  </div>
-</div>
-
-<div class="section">
-  <h2>📅 Upcoming Matches</h2>
-
-  <div class="match">
-    <div class="row"><span>Australia</span><span>vs</span><span>England</span></div>
-    <div class="time">Today • 7:30 PM • ODI</div>
-  </div>
-
-  <div class="match">
-    <div class="row"><span>Barcelona</span><span>vs</span><span>Real Madrid</span></div>
-    <div class="time">Tomorrow • 1:30 AM • La Liga</div>
   </div>
 </div>
 
