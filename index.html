@@ -4,129 +4,147 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Empire Betting</title>
+
 <style>
-body{margin:0;background:#0b1220;color:#fff;font-family:Arial;padding-bottom:80px}
-.top{background:#111827;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1f2937}
-.vip{background:linear-gradient(90deg,#7c3aed,#2563eb);padding:10px;text-align:center;font-weight:bold}
-.ticker{background:#111827;color:#fbbf24;padding:8px}
-.score{background:#052e16;color:#86efac;padding:8px 12px;font-weight:bold;display:flex;justify-content:space-between}
-.tabs{display:flex;background:#1f2937}
-.tabs div{padding:12px 16px;color:#cbd5e1;font-weight:bold}
-.tabs .a{color:#f59e0b;border-bottom:2px solid #f59e0b}
-.chips{display:flex;gap:8px;padding:12px;background:#111827;overflow:auto}
-.chip{padding:8px 14px;border-radius:20px;font-weight:bold;white-space:nowrap}
-.ip{background:#2563eb}.ps{background:#7c3aed}.bb{background:#ea580c}.ep{background:#059669}
-.card{background:#111827;margin:14px;border-radius:16px;padding:14px;border:1px solid #334155;box-shadow:0 8px 22px rgba(0,0,0,.35)}
-.row{display:flex;justify-content:space-between;align-items:center}
-.live{color:#22c55e;font-weight:bold}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:12px}
-.b{background:#60a5fa;color:#001233;border-radius:12px;padding:10px;text-align:center;font-weight:bold}
-.l{background:#fb7185;color:#3b0008;border-radius:12px;padding:10px;text-align:center;font-weight:bold}
-.small{font-size:10px;opacity:.8}
-.tg{position:fixed;right:12px;bottom:120px;display:flex;flex-direction:column;gap:12px;z-index:9999}
-.tg a{color:white;text-decoration:none;padding:12px 16px;border-radius:18px;font-weight:bold;box-shadow:0 8px 20px rgba(0,0,0,.35)}
-.t1{background:linear-gradient(135deg,#00AEEF,#0077B6)}
-.t2{background:linear-gradient(135deg,#22C55E,#15803D)}
-.t3{background:linear-gradient(135deg,#EF4444,#B91C1C)}
-.bot{position:fixed;bottom:0;left:0;right:0;background:#111827;display:flex;justify-content:space-around;padding:10px 0;border-top:1px solid #334155}
-.bot div{text-align:center;font-size:12px;color:#cbd5e1}
-.bot .a{color:#f59e0b}
-a{color:white;text-decoration:none}
+body{margin:0;background:#f1f5f9;font-family:Arial}
+.top{background:#111827;color:white;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:22px;font-weight:bold;color:#22c55e}
+.wallet{display:flex;gap:10px;align-items:center}
+.balance{background:#1f2937;padding:8px 12px;border-radius:10px;font-size:13px}
+.live{background:#16a34a;padding:8px 10px;border-radius:10px;font-size:12px;font-weight:bold}
+
+.tabs{display:flex;gap:10px;padding:12px;background:white;overflow:auto}
+.tab{padding:10px 16px;border-radius:12px;color:white;font-weight:bold;white-space:nowrap}
+.casino{background:linear-gradient(90deg,#ff6b00,#ff2d55)}
+.royal{background:linear-gradient(90deg,#6d28d9,#9333ea)}
+.cards{background:linear-gradient(90deg,#2563eb,#0ea5e9)}
+
+.section{background:#111827;color:white;padding:10px 14px;font-weight:bold;margin-top:8px}
+
+.table{background:white;margin:10px;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0}
+.head{display:grid;grid-template-columns:1fr 58px 58px 58px 58px 58px 58px;background:#f8fafc;padding:10px;border-bottom:1px solid #e2e8f0;font-weight:bold;color:#334155;font-size:13px}
+.row{display:grid;grid-template-columns:1fr 58px 58px 58px 58px 58px 58px;gap:6px;padding:12px;border-bottom:1px solid #eef2f7;align-items:center}
+
+.match{font-size:13px;font-weight:bold;color:#111827;line-height:1.35}
+.time{font-size:12px;color:#64748b;margin-top:4px}
+.liveDot{color:#16a34a;font-size:12px;font-weight:bold}
+
+.back{background:#dbeafe;border-radius:10px;padding:8px 4px;text-align:center}
+.back .odd{font-weight:bold;color:#0f172a;font-size:15px}
+.back .amt{font-size:10px;color:#475569;margin-top:2px}
+
+.lay{background:#ffe4e6;border-radius:10px;padding:8px 4px;text-align:center}
+.lay .odd{font-weight:bold;color:#3f0d12;font-size:15px}
+.lay .amt{font-size:10px;color:#6b7280;margin-top:2px}
+
+.empty{background:#f8fafc;border-radius:10px;height:46px}
+
+.float{position:fixed;right:12px;bottom:110px;display:flex;flex-direction:column;gap:10px;z-index:999}
+.float a{padding:12px 14px;border-radius:18px;color:white;text-decoration:none;font-weight:bold;box-shadow:0 8px 18px rgba(0,0,0,.18)}
+.tg{background:#0088cc}
+.dep{background:#16a34a}
+.wd{background:#ef4444}
+
+.bottom{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #e5e7eb;display:flex;justify-content:space-around;padding:10px 0}
+.bottom div{text-align:center;font-size:12px;color:#64748b}
+.bottom .active{color:#f59e0b;font-weight:bold}
 </style>
 </head>
 <body>
 
 <div class="top">
-  <div style="color:#f59e0b;font-weight:bold;font-size:18px">🎰 EMPIRE</div>
-  <div style="display:flex;gap:10px;align-items:center">
-    <div style="background:#0f172a;padding:8px 12px;border-radius:12px;border:1px solid #334155;font-size:13px">💰 ₹12,540</div>
-    <div style="background:#16a34a;padding:8px 10px;border-radius:12px;font-size:13px;font-weight:bold">LIVE</div>
+  <div class="logo">EMPIRE BETTING</div>
+  <div class="wallet">
+    <div class="balance">💰 ₹12,540</div>
+    <div class="live">LIVE</div>
   </div>
-</div>
-
-<div class="vip">👑 VIP ID AVAILABLE • FAST DEPOSIT • INSTANT WITHDRAW • 24x7 SUPPORT</div>
-
-<div class="ticker">
-<marquee scrollamount="6">🔥 India 1.83 | Pakistan 1.89 • CSK 1.68 | MI 1.74 • Liverpool 1.45 | Arsenal 1.50</marquee>
-</div>
-
-<div class="score">
-  <span>🔴 India 182/5</span>
-  <span>RR 9.25</span>
-  <span>19.4 ov</span>
 </div>
 
 <div class="tabs">
-  <div class="a">🏏 Cricket</div>
-  <div>⚽ Football</div>
-  <div>🎾 Tennis</div>
-  <div>🎰 Casino</div>
+  <div class="tab casino">🎰 Casino</div>
+  <div class="tab royal">👑 Royal Gaming</div>
+  <div class="tab cards">🃏 Card Games</div>
 </div>
 
-<div class="chips">
-  <div class="chip ip">🏆 IPL</div>
-  <div class="chip ps">🏏 PSL</div>
-  <div class="chip bb">🔥 BBL</div>
-  <div class="chip ep">⚽ EPL</div>
-</div>
+<div class="section">🏏 Cricket</div>
 
-<div class="card">
+<div class="table">
+  <div class="head">
+    <div>Match</div>
+    <div>B1</div>
+    <div>B2</div>
+    <div>B3</div>
+    <div>L1</div>
+    <div>L2</div>
+    <div>L3</div>
+  </div>
+
   <div class="row">
-    <div><span class="live">● LIVE</span> <span style="color:#94a3b8;font-size:12px">Asia Cup • Dubai</span></div>
-    <div style="color:#f59e0b">⭐</div>
+    <div class="match">
+      <div class="liveDot">● LIVE</div>
+      India vs Pakistan
+      <div class="time">Asia Cup • Dubai • 19.4 ov</div>
+    </div>
+    <div class="back"><div class="odd">1.82</div><div class="amt">125k</div></div>
+    <div class="back"><div class="odd">1.83</div><div class="amt">98k</div></div>
+    <div class="back"><div class="odd">1.84</div><div class="amt">76k</div></div>
+    <div class="lay"><div class="odd">1.88</div><div class="amt">142k</div></div>
+    <div class="lay"><div class="odd">1.89</div><div class="amt">119k</div></div>
+    <div class="lay"><div class="odd">1.90</div><div class="amt">84k</div></div>
   </div>
 
-  <div class="row" style="margin-top:12px"><div style="font-weight:bold;font-size:18px">India</div><div>182/5</div></div>
-  <div class="row" style="margin-top:10px;padding-bottom:12px;border-bottom:1px solid #1f2937"><div style="font-weight:bold;font-size:18px">Pakistan</div><div>19.4 ov</div></div>
-
-  <div class="grid">
-    <div class="b"><div class="small">BACK</div><div style="font-size:22px">1.82</div><div class="small">125k</div></div>
-    <div class="b"><div class="small">BACK</div><div style="font-size:22px">1.83</div><div class="small">98k</div></div>
-    <div class="b"><div class="small">BACK</div><div style="font-size:22px">1.84</div><div class="small">76k</div></div>
-  </div>
-
-  <div class="grid">
-    <div class="l"><div class="small">LAY</div><div style="font-size:22px">1.88</div><div class="small">142k</div></div>
-    <div class="l"><div class="small">LAY</div><div style="font-size:22px">1.89</div><div class="small">119k</div></div>
-    <div class="l"><div class="small">LAY</div><div style="font-size:22px">1.90</div><div class="small">84k</div></div>
-  </div>
-
-  <div class="row" style="margin-top:14px;color:#94a3b8;font-size:12px">
-    <span>📊 Volume ₹12.4L</span>
-    <span>🟢 Market Open</span>
+  <div class="row">
+    <div class="match">
+      CSK vs MI
+      <div class="time">IPL • Chennai • 7:30 PM</div>
+    </div>
+    <div class="back"><div class="odd">1.65</div><div class="amt">54k</div></div>
+    <div class="back"><div class="odd">1.66</div><div class="amt">41k</div></div>
+    <div class="back"><div class="odd">1.67</div><div class="amt">32k</div></div>
+    <div class="lay"><div class="odd">1.70</div><div class="amt">66k</div></div>
+    <div class="lay"><div class="odd">1.71</div><div class="amt">58k</div></div>
+    <div class="lay"><div class="odd">1.72</div><div class="amt">49k</div></div>
   </div>
 </div>
 
-<div class="card">
-  <div class="live">⚽ LIVE Football</div>
-  <div class="row" style="margin-top:10px"><span>Liverpool</span><span>2</span></div>
-  <div class="row" style="margin-top:8px"><span>Arsenal</span><span>1</span></div>
+<div class="section">⚽ Football</div>
+
+<div class="table">
+  <div class="head">
+    <div>Match</div>
+    <div>1</div>
+    <div>X</div>
+    <div>2</div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="row">
+    <div class="match">
+      Liverpool vs Arsenal
+      <div class="time">Premier League • 72'</div>
+    </div>
+    <div class="back"><div class="odd">1.45</div><div class="amt">88k</div></div>
+    <div class="back"><div class="odd">4.20</div><div class="amt">12k</div></div>
+    <div class="lay"><div class="odd">6.10</div><div class="amt">9k</div></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+  </div>
 </div>
 
-<div class="card">
-  <div class="live">🎾 LIVE Tennis</div>
-  <div class="row" style="margin-top:10px"><span>Djokovic</span><span>1</span></div>
-  <div class="row" style="margin-top:8px"><span>Alcaraz</span><span>1</span></div>
+<div class="float">
+  <a class="tg" href="https://t.me/mercyy922" target="_blank">💬 Telegram</a>
+  <a class="dep" href="https://t.me/mercyy922" target="_blank">💰 Deposit</a>
+  <a class="wd" href="https://t.me/mercyy922" target="_blank">💸 Withdraw</a>
 </div>
 
-<div class="card">
-  <div style="color:#f59e0b;font-weight:bold">🎰 Casino</div>
-  <div class="row" style="margin-top:12px"><span>🚀 Aviator</span><span style="color:#22c55e">LIVE</span></div>
-  <div class="row" style="margin-top:10px"><span>🎲 Teen Patti</span><span style="color:#22c55e">OPEN</span></div>
-  <div class="row" style="margin-top:10px"><span>🎰 Lucky 7</span><span style="color:#22c55e">OPEN</span></div>
-</div>
-
-<div class="tg">
-  <a class="t1" href="https://t.me/mercyy922" target="_blank">💬 Telegram</a>
-  <a class="t2" href="https://t.me/mercyy922" target="_blank">💰 Deposit</a>
-  <a class="t3" href="https://t.me/mercyy922" target="_blank">💸 Withdraw</a>
-</div>
-
-<div class="bot">
-  <div class="a">🏠<br>Home</div>
-  <div><a href="match.html">🔴<br>Live</a></div>
+<div class="bottom">
+  <div class="active">🏠<br>Home</div>
+  <div>🔴<br>Live</div>
   <div>📊<br>Markets</div>
-  <div><a href="profile.html">👤<br>Profile</a></div>
+  <div>👤<br>Profile</div>
 </div>
 
 </body>
