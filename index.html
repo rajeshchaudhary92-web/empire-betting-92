@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Empire Betting</title>
+<title>Empire Betting Premium</title>
+
 <style>
 body{margin:0;background:#0b1220;color:#fff;font-family:Arial;padding-bottom:90px}
 .header{background:#111827;padding:15px;text-align:center;font-size:24px;font-weight:bold;color:#f59e0b}
 .score{background:#052e16;color:#86efac;padding:8px 12px;font-weight:bold;display:flex;justify-content:space-between;position:sticky;top:0;z-index:99}
-.banner{background:#dc2626;padding:8px;text-align:center;font-weight:bold}
+.banner{background:#dc2626;padding:8px;text-align:center;font-weight:bold;white-space:nowrap;overflow:hidden}
 .tabs{display:flex;background:#1f2937;overflow:auto}
 .tabs div{padding:12px 16px;color:#cbd5e1;font-weight:bold;white-space:nowrap}
 .tabs .a{color:#f59e0b;border-bottom:2px solid #f59e0b}
@@ -16,6 +17,9 @@ body{margin:0;background:#0b1220;color:#fff;font-family:Arial;padding-bottom:90p
 .chip{padding:8px 14px;border-radius:20px;font-weight:bold;white-space:nowrap}
 .ip{background:#2563eb}.ps{background:#7c3aed}.bb{background:#ea580c}.ep{background:#059669}
 .s{padding:15px}.s h2{color:#f59e0b}
+.trend{padding:12px;background:#111827}
+.trow{display:flex;gap:10px;overflow:auto}
+.tcard{min-width:180px;background:#0f172a;border:1px solid #1f2937;border-radius:16px;padding:12px}
 .m{background:linear-gradient(180deg,#111827,#0f172a);border:1px solid #334155;border-radius:16px;padding:14px;margin-top:14px;box-shadow:0 8px 22px rgba(0,0,0,.35);position:relative}
 .hot{position:absolute;top:10px;right:10px;background:#ea580c;color:#fff;padding:4px 8px;border-radius:999px;font-size:12px;font-weight:bold}
 .live{color:#22c55e;font-weight:bold;animation:blink 1s infinite}
@@ -45,7 +49,7 @@ a{color:white;text-decoration:none}
   <span>19.4 ov</span>
 </div>
 
-<div class="banner">🔥 IPL LIVE • FOOTBALL LIVE • TENNIS LIVE • 24x7 SUPPORT 🔥</div>
+<div class="banner">🔥 IPL LIVE • FOOTBALL LIVE • TENNIS LIVE • NEW ID AVAILABLE • 24x7 SUPPORT 🔥</div>
 
 <div class="tabs">
   <div class="a">🏏 Cricket</div>
@@ -58,6 +62,15 @@ a{color:white;text-decoration:none}
   <div class="chip ps">🏏 PSL</div>
   <div class="chip bb">🔥 BBL</div>
   <div class="chip ep">⚽ EPL</div>
+</div>
+
+<div class="trend">
+  <div style="color:#f59e0b;font-weight:bold;margin-bottom:10px">🔥 Trending Matches</div>
+  <div class="trow">
+    <div class="tcard"><div class="live">LIVE</div><div style="margin-top:8px">India</div><div style="color:#94a3b8">Pakistan</div><div style="margin-top:10px;color:#f59e0b;font-weight:bold">1.83 / 1.89</div></div>
+    <div class="tcard"><div class="live">LIVE</div><div style="margin-top:8px">CSK</div><div style="color:#94a3b8">MI</div><div style="margin-top:10px;color:#f59e0b;font-weight:bold">1.65 / 1.72</div></div>
+    <div class="tcard"><div class="live">LIVE</div><div style="margin-top:8px">Liverpool</div><div style="color:#94a3b8">Arsenal</div><div style="margin-top:10px;color:#f59e0b;font-weight:bold">1.45 / 1.50</div></div>
+  </div>
 </div>
 
 <div class="s">
@@ -84,6 +97,25 @@ a{color:white;text-decoration:none}
     </div>
   </div>
   </a>
+
+  <div class="m">
+    <div class="live">● LIVE</div>
+    <div class="r"><span>CSK</span><span>144/3</span></div>
+    <div class="r"><span>MI</span><span>15.1 ov</span></div>
+    <div class="t">IPL • Chennai</div>
+
+    <div class="grid">
+      <div class="b1">1.65</div>
+      <div class="b2">1.68</div>
+      <div class="b3">1.70</div>
+    </div>
+
+    <div class="grid2">
+      <div class="l1">1.72</div>
+      <div class="l2">1.74</div>
+      <div class="l3">1.76</div>
+    </div>
+  </div>
 </div>
 
 <div class="s">
@@ -106,6 +138,13 @@ a{color:white;text-decoration:none}
   </div>
 </div>
 
+<div class="s">
+  <h2>📅 Upcoming Matches</h2>
+  <div class="m"><div class="r"><span>Australia</span><span>vs</span><span>England</span></div><div class="t">Today • 7:30 PM • ODI</div></div>
+  <div class="m"><div class="r"><span>Barcelona</span><span>vs</span><span>Real Madrid</span></div><div class="t">Tomorrow • 1:30 AM • La Liga</div></div>
+  <div class="m"><div class="r"><span>Nadal</span><span>vs</span><span>Sinner</span></div><div class="t">Tomorrow • 5:00 PM • ATP</div></div>
+</div>
+
 <div class="tg">
   <a class="t1" href="https://t.me/mercyy922" target="_blank">💬 Telegram</a>
   <a class="t2" href="https://t.me/mercyy922" target="_blank">💰 Deposit</a>
@@ -114,7 +153,7 @@ a{color:white;text-decoration:none}
 
 <div class="bot">
   <div class="a">🏠<br>Home</div>
-  <div>🔴<br>Live</div>
+  <div><a href="match.html">🔴<br>Live</a></div>
   <div>🎯<br>Markets</div>
   <div><a href="profile.html">👤<br>Profile</a></div>
 </div>
