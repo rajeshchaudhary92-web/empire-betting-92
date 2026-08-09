@@ -3,24 +3,244 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Wallet</title>
+<title>Premium Wallet</title>
+
 <style>
-body{margin:0;background:#0b1220;color:#fff;font-family:Arial}
-.top{background:#111827;padding:15px;text-align:center;font-size:22px;font-weight:bold;color:#f59e0b}
-.card{background:#111827;margin:15px;border-radius:16px;padding:20px;border:1px solid #1f2937}
-.btn{display:block;background:#16a34a;text-align:center;padding:14px;border-radius:12px;margin-top:15px;font-weight:bold;color:white;text-decoration:none}
-.btn2{background:#dc2626}
+body{
+  margin:0;
+  background:#0b1220;
+  color:white;
+  font-family:Arial;
+  padding-bottom:90px;
+}
+
+.top{
+  background:#111827;
+  padding:16px;
+  text-align:center;
+  font-size:24px;
+  font-weight:bold;
+  color:#f59e0b;
+  position:sticky;
+  top:0;
+}
+
+.balance{
+  background:linear-gradient(135deg,#16a34a,#15803d);
+  margin:15px;
+  border-radius:24px;
+  padding:24px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(22,163,74,.35);
+}
+
+.balance .amt{
+  font-size:42px;
+  font-weight:bold;
+  margin:10px 0;
+}
+
+.btns{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin:15px;
+}
+
+.btn{
+  text-decoration:none;
+  color:white;
+  text-align:center;
+  padding:16px;
+  border-radius:18px;
+  font-weight:bold;
+  box-shadow:0 6px 18px rgba(0,0,0,.3);
+}
+
+.add{background:#2563eb}
+.wit{background:#dc2626}
+
+.card{
+  background:#111827;
+  margin:15px;
+  border-radius:20px;
+  padding:18px;
+  border:1px solid #1f2937;
+}
+
+.title{
+  color:#f59e0b;
+  font-weight:bold;
+  margin-bottom:15px;
+  font-size:18px;
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 0;
+  border-bottom:1px solid #1f2937;
+}
+
+.row:last-child{
+  border-bottom:none;
+}
+
+.left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.icon{
+  width:38px;
+  height:38px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+}
+
+.i1{background:#1d4ed8}
+.i2{background:#15803d}
+.i3{background:#b91c1c}
+
+.sub{
+  color:#94a3b8;
+  font-size:13px;
+}
+
+.pos{color:#22c55e;font-weight:bold}
+.neg{color:#ef4444;font-weight:bold}
+
+.support{
+  text-align:center;
+  margin:20px;
+}
+
+.support a{
+  display:inline-block;
+  background:#0088cc;
+  color:white;
+  text-decoration:none;
+  padding:14px 20px;
+  border-radius:16px;
+  font-weight:bold;
+  box-shadow:0 6px 18px rgba(0,136,204,.35);
+}
+
+.bottom{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:rgba(17,24,39,.92);
+  backdrop-filter:blur(12px);
+  display:flex;
+  justify-content:space-around;
+  padding:10px 0;
+  border-top:1px solid #1f2937;
+}
+
+.bottom div{
+  text-align:center;
+  font-size:12px;
+  color:#cbd5e1;
+}
+
+.bottom .a{
+  color:#f59e0b;
+}
+
+.bottom a{
+  color:inherit;
+  text-decoration:none;
+}
 </style>
 </head>
+
 <body>
 
-<div class="top">💰 Wallet</div>
+<div class="top">💰 Premium Wallet</div>
+
+<div class="balance">
+  <div>Available Balance</div>
+  <div class="amt">₹0.00</div>
+  <div style="opacity:.9">Last updated: Just now</div>
+</div>
+
+<div class="btns">
+  <a class="btn add" href="https://t.me/mercyy922" target="_blank">➕ Add Money</a>
+  <a class="btn wit" href="https://t.me/mercyy922" target="_blank">➖ Withdraw</a>
+</div>
 
 <div class="card">
-  <h2 style="text-align:center">Available Balance</h2>
-  <div style="text-align:center;font-size:36px;color:#22c55e">₹0.00</div>
-  <a class="btn" href="https://t.me/mercyy922">💰 Deposit</a>
-  <a class="btn btn2" href="https://t.me/mercyy922">💸 Withdraw</a>
+  <div class="title">📊 Wallet Summary</div>
+
+  <div class="row">
+    <span>Main Balance</span>
+    <span>₹0.00</span>
+  </div>
+
+  <div class="row">
+    <span>Exposure</span>
+    <span>₹0.00</span>
+  </div>
+
+  <div class="row">
+    <span>Bonus</span>
+    <span>₹0.00</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="title">📜 Recent Transactions</div>
+
+  <div class="row">
+    <div class="left">
+      <div class="icon i1">💰</div>
+      <div>
+        <div>Deposit</div>
+        <div class="sub">10 Aug • 04:30 AM</div>
+      </div>
+    </div>
+    <div class="pos">+₹1,000</div>
+  </div>
+
+  <div class="row">
+    <div class="left">
+      <div class="icon i2">🏏</div>
+      <div>
+        <div>Bet Won</div>
+        <div class="sub">India vs Pakistan</div>
+      </div>
+    </div>
+    <div class="pos">+₹410</div>
+  </div>
+
+  <div class="row">
+    <div class="left">
+      <div class="icon i3">⚽</div>
+      <div>
+        <div>Bet Lost</div>
+        <div class="sub">Liverpool vs Arsenal</div>
+      </div>
+    </div>
+    <div class="neg">-₹300</div>
+  </div>
+</div>
+
+<div class="support">
+  <a href="https://t.me/mercyy922" target="_blank">💬 Telegram Support</a>
+</div>
+
+<div class="bottom">
+  <div><a href="index.html">🏠<br>Home</a></div>
+  <div><a href="match.html">🔴<br>Live</a></div>
+  <div class="a">💰<br>Wallet</div>
+  <div><a href="profile.html">👤<br>Profile</a></div>
 </div>
 
 </body>
