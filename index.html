@@ -294,11 +294,12 @@
         );
 
         const data = await response.json();
+      const matches = data.data || [];
+      const match =
+  matches.find(m => m.ms === "live") ||
+  matches[0];
 
-        const match =
-          (data || []).find(m => m.ms === "live") ||
-          (data || [])[0];
-
+Final code aisa dikhe
         if (match) {
           document.getElementById("liveScoreBox").innerHTML =
             "🏏 <b>" + (match.t1 || "Team 1") + " vs " + (match.t2 || "Team 2") + "</b><br>" +
