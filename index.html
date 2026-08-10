@@ -288,7 +288,7 @@ const API_KEY = "65e88684-1982-433e-84e0-dc026a15d26c";
 
 async function loadLiveScore() {
   try {
-    const url = "https://api.cricapi.com/v1/currentMatches?apikey=" + API_KEY + "&offset=0";
+    const url = "https://api.cricapi.com/v1/cricScore?apikey=" + API_KEY;
 
     const response = await fetch(url);
     const data = await response.json();
