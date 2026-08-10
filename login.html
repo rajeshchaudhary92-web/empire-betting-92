@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Empire Login</title>
+
+  <style>
+    body{
+      margin:0;
+      background:#0f172a;
+      font-family:Arial;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      color:white;
+    }
+
+    .box{
+      background:#111827;
+      padding:30px;
+      border-radius:18px;
+      width:320px;
+      box-shadow:0 0 25px rgba(0,0,0,.4);
+    }
+
+    h2{
+      text-align:center;
+      color:#22c55e;
+      margin-bottom:25px;
+    }
+
+    input{
+      width:100%;
+      padding:12px;
+      margin:10px 0;
+      border:none;
+      border-radius:10px;
+      background:#1f2937;
+      color:white;
+      box-sizing:border-box;
+      font-size:15px;
+    }
+
+    button{
+      width:100%;
+      padding:12px;
+      margin-top:10px;
+      border:none;
+      border-radius:10px;
+      background:#22c55e;
+      color:white;
+      font-weight:bold;
+      font-size:15px;
+      cursor:pointer;
+    }
+
+    #msg{
+      text-align:center;
+      margin-top:15px;
+      font-size:14px;
+      color:#cbd5e1;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>EMPIRE LOGIN</h2>
+
+  <input type="email" id="email" placeholder="Email address">
+  <input type="password" id="password" placeholder="Password">
+
+  <button onclick="signup()">Create Account</button>
+  <button onclick="login()">Login</button>
+
+  <div id="msg"></div>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyB0TVTzixnf3IRFmTMZTi97eyvIHFt6ioY",
+  authDomain: "empire-betting.firebaseapp.com",
+  projectId: "empire-betting",
+  storageBucket: "empire-betting.firebasestorage.app",
+  messagingSenderId: "291607904110",
+  appId: "1:291607904110:web:4f1326e2b841f2ed4e8b7f"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+window.signup = async function () {
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  try {
+    await createUserWithEmailAndPassword(auth, email, password);
+    document.getElementById('msg').innerText = 'Account created successfully!';
+  } catch (e) {
+    document.getElementById('msg').innerText = e.message;
+  }
+}
+
+window.login = async function () {
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    document.getElementById('msg').innerText = 'Login successful!';
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 1000);
+  } catch (e) {
+    document.getElementById('msg').innerText = 'Wrong email or password';
+  }
+}
+</script>
+
+</body>
+</html>
