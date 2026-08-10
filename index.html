@@ -293,8 +293,9 @@ async function loadLiveScore() {
     const response = await fetch(url);
     const data = await response.json();
 
-    if (data.data && data.data.length > 0) {
-      const match = data.data[0];
+    if (data && data.length > 0) {
+
+const match = data[0];
 
       document.getElementById("liveScoreBox").innerHTML =
         "🏏 <b>" + match.name + "</b><br>" +
