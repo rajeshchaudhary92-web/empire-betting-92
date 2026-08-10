@@ -1,319 +1,322 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Empire Betting</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Empire Betting</title>
 
-<style>
-body{
-  margin:0;
-  background:#f1f5f9;
-  font-family:Arial;
-  padding-bottom:80px;
-}
+  <style>
+    body{
+      margin:0;
+      background:#f1f5f9;
+      font-family:Arial, sans-serif;
+      padding-bottom:90px;
+    }
 
-.top{
-  background:#111827;
-  color:white;
-  padding:14px 16px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+    .top{
+      background:#111827;
+      color:white;
+      padding:14px 16px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
 
-.logo{
-  font-size:22px;
-  font-weight:bold;
-  color:#22c55e;
-}
+    .logo{
+      font-size:22px;
+      font-weight:bold;
+      color:#22c55e;
+    }
 
-.balance{
-  background:#1f2937;
-  padding:8px 12px;
-  border-radius:10px;
-  font-size:13px;
-}
+    .wallet{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
 
-.livebtn{
-  background:#16a34a;
-  padding:8px 10px;
-  border-radius:10px;
-  font-size:12px;
-  font-weight:bold;
-}
+    .balance{
+      background:#1f2937;
+      padding:8px 12px;
+      border-radius:10px;
+      font-size:13px;
+    }
 
-.wallet{
-  display:flex;
-  gap:10px;
-  align-items:center;
-}
+    .livebtn{
+      background:#16a34a;
+      padding:8px 10px;
+      border-radius:10px;
+      font-size:12px;
+      font-weight:bold;
+    }
 
-.tabs{
-  display:flex;
-  gap:10px;
-  padding:12px;
-  background:white;
-  overflow:auto;
-}
+    .tabs{
+      display:flex;
+      gap:10px;
+      padding:12px;
+      background:white;
+      overflow:auto;
+    }
 
-.tab{
-  padding:10px 16px;
-  border-radius:12px;
-  color:white;
-  font-weight:bold;
-  white-space:nowrap;
-}
+    .tab{
+      padding:10px 16px;
+      border-radius:12px;
+      color:white;
+      font-weight:bold;
+      white-space:nowrap;
+    }
 
-.casino{background:linear-gradient(90deg,#ff6b00,#ff2d55);}
-.royal{background:linear-gradient(90deg,#6d28d9,#9333ea);}
-.cards{background:linear-gradient(90deg,#2563eb,#0ea5e9);}
+    .casino{background:linear-gradient(90deg,#ff6b00,#ff2d55);}
+    .royal{background:linear-gradient(90deg,#6d28d9,#9333ea);}
+    .cards{background:linear-gradient(90deg,#2563eb,#0ea5e9);}
 
-#liveScoreBox{
-  background:#111827;
-  color:white;
-  padding:14px;
-  margin:10px;
-  border-radius:14px;
-  font-size:14px;
-  line-height:1.6;
-}
+    #liveScoreBox{
+      background:#111827;
+      color:white;
+      margin:10px;
+      padding:14px;
+      border-radius:14px;
+      line-height:1.7;
+      font-size:14px;
+    }
 
-.section{
-  background:#111827;
-  color:white;
-  padding:10px 14px;
-  font-weight:bold;
-  margin-top:8px;
-}
+    .section{
+      background:#111827;
+      color:white;
+      padding:10px 14px;
+      font-weight:bold;
+      margin-top:8px;
+    }
 
-.table{
-  background:white;
-  margin:10px;
-  border-radius:14px;
-  overflow:hidden;
-  border:1px solid #e2e8f0;
-}
+    .table{
+      background:white;
+      margin:10px;
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid #e2e8f0;
+    }
 
-.head{
-  display:grid;
-  grid-template-columns:1fr 56px 56px 56px 56px 56px 56px;
-  background:#f8fafc;
-  padding:10px;
-  border-bottom:1px solid #e2e8f0;
-  font-weight:bold;
-  color:#334155;
-  font-size:12px;
-}
+    .head{
+      display:grid;
+      grid-template-columns:1fr 56px 56px 56px 56px 56px 56px;
+      background:#f8fafc;
+      padding:10px;
+      border-bottom:1px solid #e2e8f0;
+      font-weight:bold;
+      color:#334155;
+      font-size:12px;
+    }
 
-.row{
-  display:grid;
-  grid-template-columns:1fr 56px 56px 56px 56px 56px 56px;
-  gap:6px;
-  padding:12px;
-  border-bottom:1px solid #eef2f7;
-  align-items:center;
-}
+    .row{
+      display:grid;
+      grid-template-columns:1fr 56px 56px 56px 56px 56px 56px;
+      gap:6px;
+      padding:12px;
+      border-bottom:1px solid #eef2f7;
+      align-items:center;
+    }
 
-.match{
-  font-size:13px;
-  font-weight:bold;
-  color:#111827;
-  line-height:1.35;
-}
+    .match{
+      font-size:13px;
+      font-weight:bold;
+      color:#111827;
+      line-height:1.35;
+    }
 
-.time{
-  font-size:11px;
-  color:#64748b;
-  margin-top:4px;
-}
+    .time{
+      font-size:11px;
+      color:#64748b;
+      margin-top:4px;
+    }
 
-.liveDot{
-  color:#16a34a;
-  font-size:12px;
-  font-weight:bold;
-}
+    .liveDot{
+      color:#16a34a;
+      font-size:12px;
+      font-weight:bold;
+    }
 
-.back{
-  background:#dbeafe;
-  border-radius:10px;
-  padding:8px 4px;
-  text-align:center;
-}
+    .back{
+      background:#dbeafe;
+      border-radius:10px;
+      padding:8px 4px;
+      text-align:center;
+    }
 
-.back .odd{
-  font-weight:bold;
-  color:#0f172a;
-  font-size:15px;
-}
+    .back .odd{
+      font-weight:bold;
+      color:#0f172a;
+      font-size:15px;
+    }
 
-.back .amt{
-  font-size:10px;
-  color:#475569;
-  margin-top:2px;
-}
+    .back .amt{
+      font-size:10px;
+      color:#475569;
+      margin-top:2px;
+    }
 
-.lay{
-  background:#ffe4e6;
-  border-radius:10px;
-  padding:8px 4px;
-  text-align:center;
-}
+    .lay{
+      background:#ffe4e6;
+      border-radius:10px;
+      padding:8px 4px;
+      text-align:center;
+    }
 
-.lay .odd{
-  font-weight:bold;
-  color:#3f0d12;
-  font-size:15px;
-}
+    .lay .odd{
+      font-weight:bold;
+      color:#3f0d12;
+      font-size:15px;
+    }
 
-.lay .amt{
-  font-size:10px;
-  color:#6b7280;
-  margin-top:2px;
-}
+    .lay .amt{
+      font-size:10px;
+      color:#6b7280;
+      margin-top:2px;
+    }
 
-.float{
-  position:fixed;
-  right:12px;
-  bottom:110px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  z-index:999;
-}
+    .float{
+      position:fixed;
+      right:12px;
+      bottom:110px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      z-index:999;
+    }
 
-.float a{
-  padding:12px 14px;
-  border-radius:18px;
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-}
+    .float a{
+      padding:12px 14px;
+      border-radius:18px;
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+      text-align:center;
+    }
 
-.tg{background:#0088cc;}
-.dep{background:#16a34a;}
-.wd{background:#ef4444;}
+    .tg{background:#0088cc;}
+    .dep{background:#16a34a;}
+    .wd{background:#ef4444;}
 
-.bottom{
-  position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
-  background:white;
-  border-top:1px solid #e5e7eb;
-  display:flex;
-  justify-content:space-around;
-  padding:10px 0;
-}
+    .bottom{
+      position:fixed;
+      bottom:0;
+      left:0;
+      right:0;
+      background:white;
+      border-top:1px solid #e5e7eb;
+      display:flex;
+      justify-content:space-around;
+      padding:10px 0;
+    }
 
-.bottom a{
-  text-align:center;
-  font-size:12px;
-  color:#64748b;
-  text-decoration:none;
-}
+    .bottom a{
+      text-align:center;
+      font-size:12px;
+      color:#64748b;
+      text-decoration:none;
+    }
 
-.bottom .active{
-  color:#f59e0b;
-  font-weight:bold;
-}
-</style>
+    .bottom .active{
+      color:#f59e0b;
+      font-weight:bold;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="top">
-  <div class="logo">EMPIRE BETTING</div>
-  <div class="wallet">
-    <div class="balance">💰 ₹12,540</div>
-    <div class="livebtn">LIVE</div>
-  </div>
-</div>
-
-<div class="tabs">
-  <div class="tab casino">🎰 Casino</div>
-  <div class="tab royal">👑 Royal Gaming</div>
-  <div class="tab cards">🃏 Card Games</div>
-</div>
-
-<div id="liveScoreBox">
-🏏 Loading live cricket score...
-</div>
-
-<div class="section">🏏 Cricket</div>
-
-<div class="table">
-  <div class="head">
-    <div>Match</div>
-    <div>B1</div>
-    <div>B2</div>
-    <div>B3</div>
-    <div>L1</div>
-    <div>L2</div>
-    <div>L3</div>
+  <div class="top">
+    <div class="logo">EMPIRE BETTING</div>
+    <div class="wallet">
+      <div class="balance">💰 ₹12,540</div>
+      <div class="livebtn">LIVE</div>
+    </div>
   </div>
 
-  <div class="row">
-    <div class="match">
-      <div class="liveDot">● LIVE</div>
-      India vs Pakistan
-      <div class="time">Asia Cup • Dubai • 19.4 ov</div>
+  <div class="tabs">
+    <div class="tab casino">🎰 Casino</div>
+    <div class="tab royal">👑 Royal Gaming</div>
+    <div class="tab cards">🃏 Card Games</div>
+  </div>
+
+  <div id="liveScoreBox">
+    🏏 Loading live cricket score...
+  </div>
+
+  <div class="section">🏏 Cricket</div>
+
+  <div class="table">
+    <div class="head">
+      <div>Match</div>
+      <div>B1</div>
+      <div>B2</div>
+      <div>B3</div>
+      <div>L1</div>
+      <div>L2</div>
+      <div>L3</div>
     </div>
 
-    <div class="back"><div class="odd">1.82</div><div class="amt">125k</div></div>
-    <div class="back"><div class="odd">1.83</div><div class="amt">98k</div></div>
-    <div class="back"><div class="odd">1.84</div><div class="amt">76k</div></div>
+    <div class="row">
+      <div class="match">
+        <div class="liveDot">● LIVE</div>
+        India vs Pakistan
+        <div class="time">Asia Cup • Dubai • 19.4 ov</div>
+      </div>
 
-    <div class="lay"><div class="odd">1.88</div><div class="amt">142k</div></div>
-    <div class="lay"><div class="odd">1.89</div><div class="amt">119k</div></div>
-    <div class="lay"><div class="odd">1.90</div><div class="amt">84k</div></div>
+      <div class="back"><div class="odd">1.82</div><div class="amt">125k</div></div>
+      <div class="back"><div class="odd">1.83</div><div class="amt">98k</div></div>
+      <div class="back"><div class="odd">1.84</div><div class="amt">76k</div></div>
+
+      <div class="lay"><div class="odd">1.88</div><div class="amt">142k</div></div>
+      <div class="lay"><div class="odd">1.89</div><div class="amt">119k</div></div>
+      <div class="lay"><div class="odd">1.90</div><div class="amt">84k</div></div>
+    </div>
   </div>
-</div>
 
-<div class="float">
-  <a class="tg" href="https://t.me/mercyy922" target="_blank">💬 Telegram</a>
-  <a class="dep" href="https://t.me/mercyy922" target="_blank">💰 Deposit</a>
-  <a class="wd" href="https://t.me/mercyy922" target="_blank">💸 Withdraw</a>
-</div>
+  <div class="float">
+    <a class="tg" href="https://t.me/mercyy922" target="_blank">💬 Telegram</a>
+    <a class="dep" href="https://t.me/mercyy922" target="_blank">💰 Deposit</a>
+    <a class="wd" href="https://t.me/mercyy922" target="_blank">💸 Withdraw</a>
+  </div>
 
-<div class="bottom">
-  <a class="active" href="index.html">🏠<br>Home</a>
-  <a href="match.html">🔴<br>Live</a>
-  <a href="#">📊<br>Markets</a>
-  <a href="profile.html">👤<br>Profile</a>
-</div>
+  <div class="bottom">
+    <a class="active" href="index.html">🏠<br>Home</a>
+    <a href="match.html">🔴<br>Live</a>
+    <a href="#">📊<br>Markets</a>
+    <a href="profile.html">👤<br>Profile</a>
+  </div>
 
-<script>
-const API_KEY = "65e88684-1982-433e-84e0-dc026a15d26c";
+  <script>
+    const API_KEY = "65e88684-1982-433e-84e0-dc026a15d26c";
 
-async function loadLiveScore() {
-  try {
-    const url = "https://api.cricapi.com/v1/cricScore?apikey=" + API_KEY;
+    async function loadLiveScore() {
+      try {
+        const response = await fetch(
+          "https://api.cricapi.com/v1/cricScore?apikey=" + API_KEY
+        );
 
-    const response = await fetch(url);
-    const data = await response.json();
+        const data = await response.json();
 
-    if (data && data.length >= 0) {
+        const match =
+          (data || []).find(m => m.ms === "live") ||
+          (data || [])[0];
 
-const match = data.find(m => m.ms === "live") || data[0];
+        if (match) {
+          document.getElementById("liveScoreBox").innerHTML =
+            "🏏 <b>" + (match.t1 || "Team 1") + " vs " + (match.t2 || "Team 2") + "</b><br>" +
+            "📢 " + (match.status || "Match in progress") + "<br>" +
+            "📊 Score: " + (match.t1s || "-") + " | " + (match.t2s || "-");
+        } else {
+          document.getElementById("liveScoreBox").innerHTML =
+            "🏏 No current match available";
+        }
+      } catch (e) {
+        document.getElementById("liveScoreBox").innerHTML =
+          "❌ Live score error";
+      }
+    }
 
-      document.getElementById("liveScoreBox").innerHTML =
-        "🏏 <b>" + match.name + "</b><br>" +
-        "📢 " + match.status + "<br>" +
-        "📊 Score: " +
-        (match.score?.[0]?.r || "-") + "/" +
-        (match.score?.[0]?.w || "-") +
-        " (" + (match.score?.[0]?.o || "-") + ")";
-    } else {
-      document.getElementById("liveScoreBox").innerHTML = "🏏 Match data loading...";
-  } catch (e) {
-    document.getElementById("liveScoreBox").innerHTML = "Live score error";
-  }
-}
-
-loadLiveScore();
-setInterval(loadLiveScore, 30000);
-</script>
+    loadLiveScore();
+    setInterval(loadLiveScore, 30000);
+  </script>
 
 </body>
 </html>
