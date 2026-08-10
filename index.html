@@ -4,51 +4,222 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Empire Betting</title>
+
 <style>
-body{margin:0;background:#f1f5f9;font-family:Arial;padding-bottom:80px}
-.top{background:#111827;color:white;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:22px;font-weight:bold;color:#22c55e}
-.balance{background:#1f2937;padding:8px 12px;border-radius:10px;font-size:13px}
-.livebtn{background:#16a34a;padding:8px 10px;border-radius:10px;font-size:12px;font-weight:bold}
-.wallet{display:flex;gap:10px;align-items:center}
+body{
+  margin:0;
+  background:#f1f5f9;
+  font-family:Arial;
+  padding-bottom:80px;
+}
 
-.tabs{display:flex;gap:10px;padding:12px;background:white;overflow:auto}
-.tab{padding:10px 16px;border-radius:12px;color:white;font-weight:bold;white-space:nowrap}
-.casino{background:linear-gradient(90deg,#ff6b00,#ff2d55)}
-.royal{background:linear-gradient(90deg,#6d28d9,#9333ea)}
-.cards{background:linear-gradient(90deg,#2563eb,#0ea5e9)}
+.top{
+  background:#111827;
+  color:white;
+  padding:14px 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-.ticker{background:#0f172a;color:#fbbf24;padding:8px;font-size:13px}
+.logo{
+  font-size:22px;
+  font-weight:bold;
+  color:#22c55e;
+}
 
-.section{background:#111827;color:white;padding:10px 14px;font-weight:bold;margin-top:8px}
+.balance{
+  background:#1f2937;
+  padding:8px 12px;
+  border-radius:10px;
+  font-size:13px;
+}
 
-.table{background:white;margin:10px;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0}
-.head{display:grid;grid-template-columns:1fr 56px 56px 56px 56px 56px 56px;background:#f8fafc;padding:10px;border-bottom:1px solid #e2e8f0;font-weight:bold;color:#334155;font-size:12px}
-.row{display:grid;grid-template-columns:1fr 56px 56px 56px 56px 56px 56px;gap:6px;padding:12px;border-bottom:1px solid #eef2f7;align-items:center}
+.livebtn{
+  background:#16a34a;
+  padding:8px 10px;
+  border-radius:10px;
+  font-size:12px;
+  font-weight:bold;
+}
 
-.match{font-size:13px;font-weight:bold;color:#111827;line-height:1.35}
-.time{font-size:11px;color:#64748b;margin-top:4px}
-.liveDot{color:#16a34a;font-size:12px;font-weight:bold}
+.wallet{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
 
-.back{background:#dbeafe;border-radius:10px;padding:8px 4px;text-align:center}
-.back .odd{font-weight:bold;color:#0f172a;font-size:15px}
-.back .amt{font-size:10px;color:#475569;margin-top:2px}
+.tabs{
+  display:flex;
+  gap:10px;
+  padding:12px;
+  background:white;
+  overflow:auto;
+}
 
-.lay{background:#ffe4e6;border-radius:10px;padding:8px 4px;text-align:center}
-.lay .odd{font-weight:bold;color:#3f0d12;font-size:15px}
-.lay .amt{font-size:10px;color:#6b7280;margin-top:2px}
+.tab{
+  padding:10px 16px;
+  border-radius:12px;
+  color:white;
+  font-weight:bold;
+  white-space:nowrap;
+}
 
-.float{position:fixed;right:12px;bottom:110px;display:flex;flex-direction:column;gap:10px;z-index:999}
-.float a{padding:12px 14px;border-radius:18px;color:white;text-decoration:none;font-weight:bold}
-.tg{background:#0088cc}
-.dep{background:#16a34a}
-.wd{background:#ef4444}
+.casino{background:linear-gradient(90deg,#ff6b00,#ff2d55);}
+.royal{background:linear-gradient(90deg,#6d28d9,#9333ea);}
+.cards{background:linear-gradient(90deg,#2563eb,#0ea5e9);}
 
-.bottom{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #e5e7eb;display:flex;justify-content:space-around;padding:10px 0}
-.bottom a{text-align:center;font-size:12px;color:#64748b;text-decoration:none}
-.bottom .active{color:#f59e0b;font-weight:bold}
+#liveScoreBox{
+  background:#111827;
+  color:white;
+  padding:14px;
+  margin:10px;
+  border-radius:14px;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.section{
+  background:#111827;
+  color:white;
+  padding:10px 14px;
+  font-weight:bold;
+  margin-top:8px;
+}
+
+.table{
+  background:white;
+  margin:10px;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid #e2e8f0;
+}
+
+.head{
+  display:grid;
+  grid-template-columns:1fr 56px 56px 56px 56px 56px 56px;
+  background:#f8fafc;
+  padding:10px;
+  border-bottom:1px solid #e2e8f0;
+  font-weight:bold;
+  color:#334155;
+  font-size:12px;
+}
+
+.row{
+  display:grid;
+  grid-template-columns:1fr 56px 56px 56px 56px 56px 56px;
+  gap:6px;
+  padding:12px;
+  border-bottom:1px solid #eef2f7;
+  align-items:center;
+}
+
+.match{
+  font-size:13px;
+  font-weight:bold;
+  color:#111827;
+  line-height:1.35;
+}
+
+.time{
+  font-size:11px;
+  color:#64748b;
+  margin-top:4px;
+}
+
+.liveDot{
+  color:#16a34a;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.back{
+  background:#dbeafe;
+  border-radius:10px;
+  padding:8px 4px;
+  text-align:center;
+}
+
+.back .odd{
+  font-weight:bold;
+  color:#0f172a;
+  font-size:15px;
+}
+
+.back .amt{
+  font-size:10px;
+  color:#475569;
+  margin-top:2px;
+}
+
+.lay{
+  background:#ffe4e6;
+  border-radius:10px;
+  padding:8px 4px;
+  text-align:center;
+}
+
+.lay .odd{
+  font-weight:bold;
+  color:#3f0d12;
+  font-size:15px;
+}
+
+.lay .amt{
+  font-size:10px;
+  color:#6b7280;
+  margin-top:2px;
+}
+
+.float{
+  position:fixed;
+  right:12px;
+  bottom:110px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  z-index:999;
+}
+
+.float a{
+  padding:12px 14px;
+  border-radius:18px;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.tg{background:#0088cc;}
+.dep{background:#16a34a;}
+.wd{background:#ef4444;}
+
+.bottom{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:white;
+  border-top:1px solid #e5e7eb;
+  display:flex;
+  justify-content:space-around;
+  padding:10px 0;
+}
+
+.bottom a{
+  text-align:center;
+  font-size:12px;
+  color:#64748b;
+  text-decoration:none;
+}
+
+.bottom .active{
+  color:#f59e0b;
+  font-weight:bold;
+}
 </style>
 </head>
+
 <body>
 
 <div class="top">
@@ -65,50 +236,37 @@ body{margin:0;background:#f1f5f9;font-family:Arial;padding-bottom:80px}
   <div class="tab cards">🃏 Card Games</div>
 </div>
 
-<div class="ticker">
-  <marquee scrollamount="5">🔥 India 1.83 | Pakistan 1.89 • CSK 1.66 | MI 1.71 • Liverpool 1.45 | Arsenal 4.20 • Aviator LIVE 🚀</marquee>
+<div id="liveScoreBox">
+🏏 Loading live cricket score...
 </div>
 
 <div class="section">🏏 Cricket</div>
 
 <div class="table">
   <div class="head">
-    <div>Match</div><div>B1</div><div>B2</div><div>B3</div><div>L1</div><div>L2</div><div>L3</div>
+    <div>Match</div>
+    <div>B1</div>
+    <div>B2</div>
+    <div>B3</div>
+    <div>L1</div>
+    <div>L2</div>
+    <div>L3</div>
   </div>
 
-  <a href="match.html" style="text-decoration:none">
   <div class="row">
     <div class="match">
       <div class="liveDot">● LIVE</div>
       India vs Pakistan
       <div class="time">Asia Cup • Dubai • 19.4 ov</div>
     </div>
+
     <div class="back"><div class="odd">1.82</div><div class="amt">125k</div></div>
     <div class="back"><div class="odd">1.83</div><div class="amt">98k</div></div>
     <div class="back"><div class="odd">1.84</div><div class="amt">76k</div></div>
+
     <div class="lay"><div class="odd">1.88</div><div class="amt">142k</div></div>
     <div class="lay"><div class="odd">1.89</div><div class="amt">119k</div></div>
     <div class="lay"><div class="odd">1.90</div><div class="amt">84k</div></div>
-  </div>
-  </a>
-</div>
-
-<div class="section">⚽ Football</div>
-
-<div class="table">
-  <div class="head">
-    <div>Match</div><div>1</div><div>X</div><div>2</div><div></div><div></div><div></div>
-  </div>
-
-  <div class="row">
-    <div class="match">
-      Liverpool vs Arsenal
-      <div class="time">Premier League • 72'</div>
-    </div>
-    <div class="back"><div class="odd">1.45</div><div class="amt">88k</div></div>
-    <div class="back"><div class="odd">4.20</div><div class="amt">12k</div></div>
-    <div class="lay"><div class="odd">6.10</div><div class="amt">9k</div></div>
-    <div></div><div></div><div></div>
   </div>
 </div>
 
@@ -124,6 +282,38 @@ body{margin:0;background:#f1f5f9;font-family:Arial;padding-bottom:80px}
   <a href="#">📊<br>Markets</a>
   <a href="profile.html">👤<br>Profile</a>
 </div>
+
+<script>
+const API_KEY = "65e88684-1982-433e-84e0-dc026a15d26c";
+
+async function loadLiveScore() {
+  try {
+    const url = "https://api.cricapi.com/v1/currentMatches?apikey=" + API_KEY + "&offset=0";
+
+    const response = await fetch(url);
+    const data = await response.json();
+
+    if (data.data && data.data.length > 0) {
+      const match = data.data[0];
+
+      document.getElementById("liveScoreBox").innerHTML =
+        "🏏 <b>" + match.name + "</b><br>" +
+        "📢 " + match.status + "<br>" +
+        "📊 Score: " +
+        (match.score?.[0]?.r || "-") + "/" +
+        (match.score?.[0]?.w || "-") +
+        " (" + (match.score?.[0]?.o || "-") + ")";
+    } else {
+      document.getElementById("liveScoreBox").innerHTML = "No live match found";
+    }
+  } catch (e) {
+    document.getElementById("liveScoreBox").innerHTML = "Live score error";
+  }
+}
+
+loadLiveScore();
+setInterval(loadLiveScore, 30000);
+</script>
 
 </body>
 </html>
